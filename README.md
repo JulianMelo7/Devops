@@ -2,8 +2,6 @@
 
 Uma aplicação de calculadora prática e funcional para realizar operações matemáticas básicas. 
 
----
-
 ## Funcionalidades
 
 A calculadora está preparada para realizar:
