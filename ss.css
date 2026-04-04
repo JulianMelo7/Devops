@@ -43,13 +43,13 @@
         }
 
         input:focus {
-            border-color: #b8e1dd; /* Verde pastel */
+            border-color: #b8e1dd; 
         }
 
         button {
             margin-top: 20px;
             padding: 15px;
-            background-color: #bae1ff; /* Azul pastel */
+            background-color: #bae1ff; 
             color: #444;
             border: none;
             border-radius: 12px;
@@ -76,6 +76,6 @@
             margin-top: 10px;
             font-size: 28px;
             font-weight: bold;
-            color: #ffb3ba; /* Rosa pastel */
+            color: #31c9e4; 
         }
     
