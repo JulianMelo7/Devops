@@ -14,8 +14,8 @@ A calculadora está preparada para realizar:
 
 ## 🚀 Tecnologias Utilizadas
 
-* **Linguagem:** [Ex: Python, JavaScript, Java]
-* **Interface:** [Ex: Console / CLI ou Interface Gráfica]
+* **Linguagem:JavaScript** 
+* **Interface:HTML** 
 
 ## 📦 Como Executar o Projeto
 

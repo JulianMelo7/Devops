@@ -1,0 +1,81 @@
+/* Reset básico para centralizar tudo */
+
+        /* CSS - O Estilo Pastel */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #30b1a6; /* Fundo creme suave */
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .calculadora {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        h2 {
+            color: #777;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            outline: none;
+            font-size: 16px;
+            color: #555;
+            transition: all 0.3s;
+        }
+
+        input:focus {
+            border-color: #b8e1dd; /* Verde pastel */
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #bae1ff; /* Azul pastel */
+            color: #444;
+            border: none;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #a2d2f5;
+            transform: translateY(-2px);
+        }
+
+        .resultado-container {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        #resultado {
+            display: block;
+            margin-top: 10px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #ffb3ba; /* Rosa pastel */
+        }
+    
