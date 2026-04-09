@@ -22,6 +22,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  build:
+    name: lint - validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependências
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          fi
+
+      - name: Rodar Lint (ESLint)
+        run: |
+          if [ -f package.json ]; then
+            npx eslint . || true
+          fi
+
+      - name: Validação básica HTML
+        run: |
+          echo "Validando HTML simples..."
+          grep -q "<html" index.html
   # Single deploy job since we're just deploying
   deploy:
     environment:
