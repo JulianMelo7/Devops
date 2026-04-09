@@ -1,21 +1,71 @@
-name: CI Test
+name: CI/CD Calculadora
 
 on:
   push:
-    branches: [ main ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  test:
+  ci:
+    name: CI - Validação
     runs-on: ubuntu-latest
 
     steps:
-      - name: Baixar código
-        uses: actions/checkout@v3
+      - name: Checkout do código
+        uses: actions/checkout@v4
 
-      - name: Mostrar arquivos
-        run: ls -la
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Simular teste
-        run: echo "CI funcionando com sucesso!"
+      - name: Instalar dependências
+        run: |
+          if [ -f package.json ]; then
+            npm install
+          fi
+
+      - name: Rodar Lint (ESLint)
+        run: |
+          if [ -f package.json ]; then
+            npx eslint . || true
+          fi
+
+      - name: Validação básica HTML
+        run: |
+          echo "Validando HTML simples..."
+          grep -q "<html" index.html
+
+  deploy:
+    name: CD - Deploy
+    needs: ci
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artefato
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./
+
+      - name: Deploy para GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
