@@ -54,6 +54,7 @@ jobs:
           grep -q "<html" index.html
   # Single deploy job since we're just deploying
   deploy:
+    if: github.event_name == 'push'
     needs: build
     environment:
       name: github-pages
