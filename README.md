@@ -21,4 +21,3 @@ A calculadora está preparada para realizar:
    ```bash
    git clone [https://github.com/JulianMelo7/Devops.git](https://github.com/JulianMelo7/Devops.git)
 
-## teste cd
