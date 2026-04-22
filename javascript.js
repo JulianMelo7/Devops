@@ -22,7 +22,7 @@ function calcular() {
             resultado = n1 * n2;
             break;
         case '/':
-            // Evitando a divisão por zero
+            
             resultado = n2 !== 0 ? n1 / n2 : "Erro (Divisão por 0)";
             break;
     }
