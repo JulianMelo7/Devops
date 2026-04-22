@@ -27,6 +27,6 @@ function calcular() {
             break;
     }
 
-    // Exibindo na tela
+    
     document.getElementById('resultado').innerText = resultado;
 }
