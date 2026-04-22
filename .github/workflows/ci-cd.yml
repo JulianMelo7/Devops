@@ -50,7 +50,7 @@ jobs:
         run: |
           echo "Validando HTML simples..."
           grep -q "<html" index.html
-  # Single deploy job since we're just deploying
+  
   deploy:
     if: github.event_name == 'push'
     needs: build
@@ -70,4 +70,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-
