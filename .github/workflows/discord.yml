@@ -1,13 +1,13 @@
 name: Discord
 
-on: [push]
+on: 
+    - push
 
 jobs:
   git:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Run Discord Webhook
         uses: sniddl/discord-commits@v1.6
         with:
