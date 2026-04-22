@@ -74,14 +74,15 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
 
-  # The workflow job name
-  discord-notifier:
-    
-    # The type of runner that the job will run on
+
+  discord:
     runs-on: ubuntu-latest
-    # Sequence of tasks
     steps:
-      - name: Discord Notification
-        uses: tenzin1308/discord-notification@v1.0.0
+      - uses: actions/checkout@v4
+
+      - name: Run Discord Webhook
+        uses: sniddl/discord-commits@v1.6
         with:
-          discord-webhook-url: ${{ secrets.DISCORD_WEBHOOK}}
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          template: "avatar-with-link"
+          include-extras: true
