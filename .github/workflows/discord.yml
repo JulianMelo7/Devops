@@ -1,4 +1,4 @@
-name: Discord Webhook
+name: Discord
 
 on: [push]
 
