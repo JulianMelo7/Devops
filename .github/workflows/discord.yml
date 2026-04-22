@@ -9,7 +9,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run Discord Webhook
+      run: |
+        curl -H "Content-Type: application/json" \
+        -d '{
+        "content": "Novo commit: ${{ github.event.head_commit.message }} \n${{ github.event.head_commit.url }}"
+        }' \
+        ${{ secrets.DISCORD_WEBHOOK }}
         uses: sniddl/discord-commits@v1.6
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}            
-          template: "basic"
+          
