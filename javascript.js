@@ -1,11 +1,10 @@
 function calcular() {
-    // Pegando os valores dos inputs
+    
     const n1 = parseFloat(document.getElementById('num1').value);
     const n2 = parseFloat(document.getElementById('num2').value);
     const operacao = document.getElementById('operacao').value;
     let resultado = 0;
 
-    // Validando se os números foram preenchidos
     if (isNaN(n1) || isNaN(n2)) {
         alert("Por favor, digite números válidos!");
         return;
