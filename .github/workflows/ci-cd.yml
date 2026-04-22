@@ -74,7 +74,6 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v5
 
-
   discord:
     runs-on: ubuntu-latest
     steps:
