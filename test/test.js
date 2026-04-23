@@ -1,4 +1,4 @@
-const { calcularOperacao } = require('.javascript.js');
+const { calcularOperacao } = require('../src/javascript.js');
 
 describe('Testes da Calculadora', () => {
 
